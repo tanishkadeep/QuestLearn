@@ -27,3 +27,22 @@ export const signinFormFields = [
         placeholder: 'Enter your password',
     },
 ]
+
+export const navData = [
+    {
+        name: 'homepage',
+        url: '/'
+    },
+    {
+        name: 'get started',
+        url: '/get-started'
+    },
+    {
+        name: 'assessment',
+        url: '/assessment'
+    },
+    {
+        name: 'courses',
+        url: '/courses'
+    }
+]

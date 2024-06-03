@@ -30,6 +30,10 @@ const AuthState = (props) => {
             const data = await res.json();
             if (res.status === 200) {
                 localStorage.setItem('token', data.token);
+                setUser({
+                    email: credentials.email,
+                    name: credentials.name
+                })
                 return 'success';
             }
             return 'error';
@@ -61,6 +65,9 @@ const AuthState = (props) => {
             const data = await res.json();
             if (res.status === 200) {
                 localStorage.setItem('token', data.token);
+                setUser({
+                    email: credentials.email
+                })
                 return 'success';
             }
             return 'error';
@@ -69,10 +76,15 @@ const AuthState = (props) => {
         }
     }
 
+    const signout = () => {
+        localStorage.removeItem('token');
+        setUser(null);
+    }
+
     return (
         <>
             <Toaster />
-            <AuthContext.Provider value={{ user, setUser, signup, signin }}>
+            <AuthContext.Provider value={{ user, setUser, signup, signin, signout }}>
                 {props.children}
             </AuthContext.Provider>
         </>
