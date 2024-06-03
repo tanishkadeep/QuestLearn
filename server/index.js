@@ -9,4 +9,4 @@ app.use(express.json());
 
 app.use("/api/", rootRouter);
 
-app.listen(3000);
+app.listen(8000);
