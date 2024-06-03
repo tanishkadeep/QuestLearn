@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 
 mongoose.connect("mongodb://localhost:27017/questlearn");
 
+const Schema = mongoose.Schema;
+
 const userSchema = new Schema({
   email: {
     type: String,
